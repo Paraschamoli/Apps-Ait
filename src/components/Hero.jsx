@@ -76,39 +76,9 @@ const Hero = () => {
               transition={{ duration: 6, repeat: Infinity }}
               className="relative"
             >
-              <div className="relative bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-full font-semibold">
-                  Live Dashboard
-                </div>
-                
-                {/* Mock App Interface */}
-                <div className="space-y-6">
-                  <div className="flex space-x-4">
-                    <div className="w-1/3 h-32 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl"></div>
-                    <div className="w-2/3 h-32 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl"></div>
-                  </div>
-                  <div className="h-48 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl p-4">
-                    <div className="flex justify-between items-center mb-4">
-                      <div className="text-sm font-semibold text-gray-700">Analytics Overview</div>
-                      <div className="text-xs text-gray-500">Live</div>
-                    </div>
-                    {/* Chart bars */}
-                    <div className="flex items-end h-24 space-x-2">
-                      {[40, 60, 80, 100, 80, 60, 40].map((height, i) => (
-                        <motion.div
-                          key={i}
-                          initial={{ height: 0 }}
-                          animate={{ height: `${height}%` }}
-                          transition={{ delay: i * 0.1, duration: 0.5 }}
-                          className="w-full bg-gradient-to-t from-primary to-accent rounded-t-lg"
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Elements */}
+              {/* Removed the Live Dashboard mock interface */}
+              
+              {/* Floating Elements (keeping these since they're separate) */}
               <motion.div
                 animate={{ y: [0, -30, 0] }}
                 transition={{ duration: 4, repeat: Infinity, delay: 1 }}
