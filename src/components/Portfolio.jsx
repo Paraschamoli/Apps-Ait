@@ -7,79 +7,85 @@ const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('all');
 
   const portfolioItems = [
-  {
-  id: 1,
-  category: 'healthcare',
-  title: 'HealthCare',
-  description:
-    'A next-generation AI-powered healthcare app designed to make health management smarter and simpler. With an elegant Flutter interface and secure Firebase backend, it delivers intelligent diagnostics and seamless care—right at your fingertips. 🩺🤖',
-  tech: ['Flutter', 'AI', 'Firebase'],
-  rating: 4.9,
-  image: 'https://i.ibb.co/ZmY4YpN/healthcare.png', // REAL LINK
-  link: 'https://play.google.com/store/apps/details?id=com.appsait.healthcare'
-},
-
+    {
+      id: 1,
+      category: 'healthcare',
+      title: 'HealthCare',
+      description:
+        'A next-generation AI-powered healthcare app designed to make health management smarter and simpler. With an elegant Flutter interface and secure Firebase backend, it delivers intelligent diagnostics and seamless care—right at your fingertips. 🩺🤖',
+      tech: ['Flutter', 'AI', 'Firebase'],
+      rating: 4.9,
+      image: '/healthcare1.jpg',
+    link: 'https://play.google.com/store/apps/details?id=com.appsait.healthcare'
+    },
     {
       id: 2,
       category: 'ecommerce',
       title: 'ShopNex',
-      description: "ShopNex brings the future of online shopping to life with immersive AR try-on technology. Powered by React, Node.js, and MongoDB, it creates a fast, interactive, and visually engaging e-commerce experience that boosts confidence before every purchase. 🚀🛍️",
+      description:
+        "ShopNex brings the future of online shopping to life with immersive AR try-on technology. Powered by React, Node.js, and MongoDB, it creates a fast, interactive, and visually engaging e-commerce experience that boosts confidence before every purchase. 🚀🛍️",
       tech: ['React', 'Node.js', 'MongoDB'],
       rating: 4.8,
-      image: 'bg-gradient-to-br from-purple-100 to-pink-100',
+      image: '/ecommerce.jpg',
       link: 'https://play.google.com/store/apps/details?id=com.appsait.shopnex'
     },
     {
       id: 3,
       category: 'fashion',
       title: 'Style AI',
-      description: 'Style AI is an AI-driven fashion recommendation platform that analyzes trends and user preferences to deliver personalized outfit suggestions. Powered by Python, TensorFlow, and React Native, it makes styling smarter, faster, and more intuitive. 👚✨',
+      description:
+        'Style AI is an AI-driven fashion recommendation platform that analyzes trends and user preferences to deliver personalized outfit suggestions. Powered by Python, TensorFlow, and React Native, it makes styling smarter, faster, and more intuitive. 👚✨',
       tech: ['Python', 'TensorFlow', 'React Native'],
       rating: 4.7,
-      image: 'bg-gradient-to-br from-green-100 to-emerald-100',
+      image: '/fashion.jpg',
       link: 'https://play.google.com/store/apps/details?id=com.appsait.styleai'
     },
     {
       id: 4,
       category: 'hospitality',
       title: 'HotelSync',
-      description: 'HotelSync is an innovative hotel management system that integrates IoT technology to streamline operations, enhance guest satisfaction, and automate daily tasks. Powered by Kotlin, Spring Boot, and AWS, it brings efficiency and intelligence to every aspect of hospitality. 🏨✨',
+      description:
+        'HotelSync is an innovative hotel management system that integrates IoT technology to streamline operations, enhance guest satisfaction, and automate daily tasks. Powered by Kotlin, Spring Boot, and AWS, it brings efficiency and intelligence to every aspect of hospitality. 🏨✨',
       tech: ['Kotlin', 'Spring Boot', 'AWS'],
       rating: 4.9,
-      image: 'bg-gradient-to-br from-orange-100 to-red-100',
+      image: '/hospitality.jpg',
       link: 'https://play.google.com/store/apps/details?id=com.appsait.hotelsync'
     },
     {
       id: 5,
       category: 'education',
       title: 'Learnify',
-      description: 'LearnVR is an interactive e-learning platform that brings education to life with VR classrooms, allowing students to engage in immersive, hands-on learning experiences. Built with advanced technologies, it transforms traditional learning into a fully interactive and engaging virtual environment. 🎓🖥️',
+      description:
+        'LearnVR is an interactive e-learning platform that brings education to life with VR classrooms, allowing students to engage in immersive, hands-on learning experiences. Built with advanced technologies, it transforms traditional learning into a fully interactive and engaging virtual environment. 🎓🖥️',
       tech: ['Flutter', 'WebRTC', 'GraphQL'],
       rating: 4.8,
-      image: 'bg-gradient-to-br from-cyan-100 to-blue-100',
+      image: '/education.jpg',
       link: 'https://play.google.com/store/apps/details?id=com.appsait.learnify'
     },
     {
       id: 6,
       category: 'finance',
       title: 'FinTrack Pro',
-      description:'FinBlock is an innovative personal finance app that uses blockchain technology to provide secure, transparent, and efficient money management. It empowers users to track expenses, manage budgets, and make smarter financial decisions effortlessly.💰🔗',
+      description:
+        'FinBlock is an innovative personal finance app that uses blockchain technology to provide secure, transparent, and efficient money management. It empowers users to track expenses, manage budgets, and make smarter financial decisions effortlessly.💰🔗',
       tech: ['React Native', 'Blockchain', 'Node.js'],
       rating: 4.9,
-      image: 'bg-gradient-to-br from-indigo-100 to-purple-100',
+      image: '/finance.jpg',
       link: 'https://play.google.com/store/apps/details?id=com.appsait.fintrack'
     }
   ];
 
   const categories = ['all', 'healthcare', 'ecommerce', 'fashion', 'hospitality', 'education', 'finance'];
 
-  const filteredItems = activeFilter === 'all' 
-    ? portfolioItems 
+  const filteredItems = activeFilter === 'all'
+    ? portfolioItems
     : portfolioItems.filter(item => item.category === activeFilter);
 
   return (
-    <section className="py-20 bg-white">
+     <section className="py-20 bg-white">
+    {/* // <section id="portfolio" className="py-20 bg-white"> */}
       <div className="container mx-auto px-4">
+        {/* Header */}
         <FadeIn>
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary font-semibold mb-4">
@@ -133,14 +139,17 @@ const Portfolio = () => {
                 whileHover={{ y: -10 }}
                 className="group"
               >
-<div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow h-full flex flex-col">
+                <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow h-full flex flex-col">
 
-                  {/* Image/Color Placeholder */}
-                  <div className={`h-48 ${item.image} relative overflow-hidden`}>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-4xl font-bold text-white/20">{item.title.charAt(0)}</div>
-                    </div>
-                    <div className="absolute top-4 right-4 flex items-center space-x-1 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                  {/* Image */}
+                <div className="h-60 relative overflow-hidden rounded-2xl m-2 p-4 shadow-sm bg-white">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    {/* Rating Badge */}
+                    <div className="absolute top-4 right-4 flex items-center space-x-1 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow">
                       <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
                       <span className="font-semibold text-gray-900">{item.rating}</span>
                     </div>

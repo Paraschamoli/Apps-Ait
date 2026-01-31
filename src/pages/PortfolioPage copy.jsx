@@ -20,7 +20,7 @@ const PortfolioPage = () => {
       rating: 4.9,
       downloads: '50K+',
       impact: '40% faster diagnosis',
-      image: 'bg-gradient-to-br from-blue-100 to-cyan-100',
+      image: 'h',
       link: 'https://play.google.com/store/apps/details?id=com.appsait.healthcare',
       features: [
         'AI Diagnostic Assistant',

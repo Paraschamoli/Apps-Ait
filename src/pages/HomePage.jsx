@@ -9,7 +9,9 @@ const HomePage = () => {
     <>
       <Hero />
       <Services />
-      <Portfolio />
+      <Portfolio /> 
+     
+      {/* <a href="#portfolio"></a> */}
       <Testimonials />
       <Contact />
     </>
