@@ -142,11 +142,11 @@ const Portfolio = () => {
                 <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow h-full flex flex-col">
 
                   {/* Image */}
-                <div className="h-60 relative overflow-hidden rounded-2xl m-2 p-4 shadow-sm bg-white">
+                <div className="relative overflow-hidden rounded-2xl m- p-4 shadow-sm bg-white max-h-80">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-auto object-contain"
                     />
                     {/* Rating Badge */}
                     <div className="absolute top-4 right-4 flex items-center space-x-1 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow">

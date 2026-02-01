@@ -13,14 +13,14 @@ const PortfolioPage = () => {
     {
       id: 1,
       category: 'healthcare',
-      title: 'HealthCare Pro',
+      title: 'HealthWheelth',
       description: 'A comprehensive healthcare management platform with AI-powered diagnostics and patient monitoring system.',
       longDescription: 'Revolutionizing patient care with real-time monitoring, AI diagnostics, and seamless integration with hospital systems. Increased patient engagement by 300% and reduced administrative workload by 45%.',
       tech: ['Flutter', 'AI/ML', 'Firebase', 'Node.js', 'TensorFlow'],
       rating: 4.9,
       downloads: '50K+',
       impact: '40% faster diagnosis',
-      image: 'bg-gradient-to-br from-blue-100 to-cyan-100',
+      image: 'healthwheelth.jpg',
       link: 'https://play.google.com/store/apps/details?id=com.appsait.healthcare',
       features: [
         'AI Diagnostic Assistant',
@@ -32,114 +32,216 @@ const PortfolioPage = () => {
     },
     {
       id: 2,
-      category: 'ecommerce',
-      title: 'ShopNex',
-      description: 'Advanced e-commerce platform with AR try-on features and AI-based recommendations.',
-      longDescription: 'Transforming online shopping with augmented reality, personalized recommendations, and seamless checkout. Increased conversion rates by 65% and average order value by 40%.',
-      tech: ['React', 'Node.js', 'MongoDB', 'WebGL', 'Redis'],
+      category: 'productivity',
+      title: 'Image Editor Pro',
+      description: 'Powerful image editing application with advanced filters, effects, and professional-grade tools for content creators.',
+      longDescription: 'Empowering creators with intuitive image editing capabilities, AI-powered enhancements, and batch processing. Users report 80% faster editing workflows and professional-quality results. Used by 100K+ creators worldwide.',
+      tech: ['React Native', 'OpenCV', 'Canvas API', 'WebGL', 'Firebase'],
       rating: 4.8,
-      downloads: '100K+',
-      impact: '65% conversion increase',
-      image: 'bg-gradient-to-br from-purple-100 to-pink-100',
-      link: 'https://play.google.com/store/apps/details?id=com.appsait.shopnex',
+      downloads: '120K+',
+      impact: '80% faster workflows',
+      image: 'imageeditor.jpg',
+      link: 'https://play.google.com/store/apps/details?id=com.appsait.imageeditor',
       features: [
-        'AR Virtual Try-On',
-        'AI Recommendations',
-        'Real-time Inventory',
-        'Multi-vendor Support',
-        'Advanced Analytics'
+        'Advanced Filters & Effects',
+        'Batch Processing',
+        'Layer Support',
+        'AI Enhancement',
+        'Cloud Sync'
       ]
     },
     {
       id: 3,
-      category: 'fashion',
-      title: 'Style AI',
-      description: 'AI-powered fashion recommendation engine with virtual wardrobe and styling assistant.',
-      longDescription: 'Personalized fashion recommendations using machine learning algorithms. Users experience a 50% reduction in shopping time and 35% increase in outfit satisfaction.',
-      tech: ['Python', 'TensorFlow', 'React Native', 'Firebase', 'OpenCV'],
+      category: 'entertainment',
+      title: 'Infinity Games',
+      description: 'Engaging mobile gaming platform featuring infinite gameplay mechanics and multiplayer capabilities.',
+      longDescription: 'Creating endless entertainment with procedurally generated content, competitive multiplayer modes, and social features. Achieved 95% user retention rate and over 500K monthly active users with viral social sharing.',
+      tech: ['Unity', 'C#', 'Multiplayer Networking', 'Firebase', 'Analytics'],
       rating: 4.7,
-      downloads: '75K+',
-      impact: '50% time saved',
-      image: 'bg-gradient-to-br from-green-100 to-emerald-100',
-      link: 'https://play.google.com/store/apps/details?id=com.appsait.styleai',
+      downloads: '250K+',
+      impact: '95% retention rate',
+      image: 'infinity.jpg',
+      link: 'https://play.google.com/store/apps/details?id=com.appsait.infinity',
       features: [
-        'Personal Stylist AI',
-        'Virtual Wardrobe',
-        'Outfit Generator',
-        'Trend Analysis',
-        'Social Sharing'
+        'Infinite Gameplay',
+        'Multiplayer Mode',
+        'Social Features',
+        'Leaderboards',
+        'Daily Rewards'
       ]
     },
     {
       id: 4,
-      category: 'hospitality',
-      title: 'HotelSync',
-      description: 'Complete hotel management system with IoT integration and guest experience enhancement.',
-      longDescription: 'Streamlining hotel operations with IoT room controls, automated check-in/out, and personalized guest services. Increased guest satisfaction by 45% and operational efficiency by 60%.',
-      tech: ['Kotlin', 'Spring Boot', 'AWS', 'IoT', 'PostgreSQL'],
-      rating: 4.9,
-      downloads: '25K+',
-      impact: '60% efficiency gain',
-      image: 'bg-gradient-to-br from-orange-100 to-red-100',
-      link: 'https://play.google.com/store/apps/details?id=com.appsait.hotelsync',
+      category: 'gaming',
+      title: 'Mind Game Master',
+      description: 'Interactive puzzle and brain-training app designed to enhance cognitive skills through engaging games.',
+      longDescription: 'Boosting mental agility with scientifically-designed puzzles, progressive difficulty levels, and AI-powered personalization. Users improve their cognitive performance by 40% and enjoy daily brain training sessions.',
+      tech: ['Flutter', 'GameKit', 'Machine Learning', 'Firebase', 'Analytics'],
+      rating: 4.8,
+      downloads: '180K+',
+      impact: '40% cognitive boost',
+      image: 'mindgame.jpg',
+      link: 'https://play.google.com/store/apps/details?id=com.appsait.mindgame',
       features: [
-        'IoT Room Controls',
-        'Mobile Check-in',
-        'Guest Experience',
-        'Inventory Management',
-        'Analytics Dashboard'
+        'Brain Training Games',
+        'Progressive Difficulty',
+        'Performance Tracking',
+        'Achievements System',
+        'Daily Challenges'
       ]
     },
     {
       id: 5,
-      category: 'education',
-      title: 'Learnify',
-      description: 'Interactive e-learning platform with VR classrooms and AI tutoring system.',
-      longDescription: 'Immersive learning experience with virtual classrooms, interactive lessons, and personalized learning paths. Improved student engagement by 200% and knowledge retention by 55%.',
-      tech: ['Flutter', 'WebRTC', 'GraphQL', 'Three.js', 'MongoDB'],
-      rating: 4.8,
-      downloads: '150K+',
-      impact: '200% engagement boost',
-      image: 'bg-gradient-to-br from-cyan-100 to-blue-100',
-      link: 'https://play.google.com/store/apps/details?id=com.appsait.learnify',
+      category: 'productivity',
+      title: 'PDF Reader Master',
+      description: 'Comprehensive PDF management solution with annotation, form-filling, and advanced document handling.',
+      longDescription: 'Streamlining document workflows with powerful PDF tools, OCR capabilities, and seamless cloud integration. Businesses report 50% reduction in document processing time and improved team collaboration.',
+      tech: ['React Native', 'PDFKit', 'OCR', 'Cloud Storage', 'Node.js'],
+      rating: 4.9,
+      downloads: '200K+',
+      impact: '50% time savings',
+      image: 'pdfreader.jpg',
+      link: 'https://play.google.com/store/apps/details?id=com.appsait.pdfreader',
       features: [
-        'VR Classrooms',
-        'AI Tutor',
-        'Interactive Lessons',
-        'Progress Tracking',
-        'Collaborative Tools'
+        'Advanced PDF Editing',
+        'OCR Technology',
+        'Form Filling',
+        'Annotation Tools',
+        'Cloud Integration'
       ]
     },
     {
       id: 6,
-      category: 'finance',
-      title: 'FinTrack Pro',
-      description: 'Personal finance management app with blockchain security and investment insights.',
-      longDescription: 'Secure financial management with blockchain encryption, smart budgeting tools, and AI-powered investment recommendations. Helped users save 30% more and make better investment decisions.',
-      tech: ['React Native', 'Blockchain', 'Node.js', 'Machine Learning', 'SQLite'],
-      rating: 4.9,
-      downloads: '80K+',
-      impact: '30% more savings',
-      image: 'bg-gradient-to-br from-indigo-100 to-purple-100',
-      link: 'https://play.google.com/store/apps/details?id=com.appsait.fintrack',
+      category: 'productivity',
+      title: 'Screen Recorder Pro',
+      description: 'Professional screen recording and video capture application with editing capabilities and instant sharing.',
+      longDescription: 'Enabling content creators to capture, edit, and share professional-quality screen recordings. Supporting up to 4K resolution with minimal performance impact, used by educators, developers, and creators for tutorials and presentations.',
+      tech: ['Android NDK', 'H.264', 'FFmpeg', 'WebRTC', 'Cloud API'],
+      rating: 4.8,
+      downloads: '150K+',
+      impact: '4K quality capture',
+      image: 'screenrecorder.jpg',
+      link: 'https://play.google.com/store/apps/details?id=com.appsait.screenrecorder',
       features: [
-        'Blockchain Security',
-        'AI Budgeting',
-        'Investment Insights',
-        'Expense Tracking',
-        'Tax Planning'
+        '4K Recording',
+        'Live Streaming',
+        'Built-in Editor',
+        'Audio Control',
+        'Instant Sharing'
+      ]
+    },
+    {
+      id: 7,
+      category: 'education',
+      title: 'Smart Attendance System',
+      description: 'Intelligent attendance management solution using biometric recognition and real-time reporting.',
+      longDescription: 'Revolutionizing classroom and office attendance with facial recognition, geolocation verification, and automated reporting. Schools and organizations achieved 99% accuracy in attendance tracking and eliminated manual paperwork.',
+      tech: ['Flutter', 'Facial Recognition', 'Firebase', 'Cloud Functions', 'PostgreSQL'],
+      rating: 4.9,
+      downloads: '75K+',
+      impact: '99% accuracy',
+      image: 'smartattendence.jpg',
+      link: 'https://play.google.com/store/apps/details?id=com.appsait.attendance',
+      features: [
+        'Facial Recognition',
+        'Real-time Reporting',
+        'Geolocation Verify',
+        'Automated Reports',
+        'Analytics Dashboard'
+      ]
+    },
+    {
+      id: 8,
+      category: 'education',
+      title: 'Smart Learning Platform',
+      description: 'Comprehensive e-learning ecosystem with adaptive learning paths, interactive content, and progress analytics.',
+      longDescription: 'Transforming education through personalized learning experiences, AI-powered content recommendations, and comprehensive progress tracking. Students experience 75% improvement in learning outcomes and enhanced engagement.',
+      tech: ['React', 'Python', 'Machine Learning', 'WebRTC', 'PostgreSQL'],
+      rating: 4.8,
+      downloads: '160K+',
+      impact: '75% better outcomes',
+      image: 'smartlearningplateform.jpg',
+      link: 'https://play.google.com/store/apps/details?id=com.appsait.smartlearning',
+      features: [
+        'Adaptive Learning Paths',
+        'AI Recommendations',
+        'Live Classes',
+        'Progress Analytics',
+        'Peer Collaboration'
+      ]
+    },
+    {
+      id: 9,
+      category: 'tools',
+      title: 'AI Plant Checking',
+      description: 'Smart plant health monitoring app using AI to detect diseases and provide care recommendations.',
+      longDescription: 'Helping gardeners and farmers identify plant diseases instantly with AI-powered image recognition. Provides instant treatment recommendations and care tips. Users report 90% accuracy in disease detection.',
+      tech: ['Flutter', 'TensorFlow', 'Firebase', 'OpenCV', 'Node.js'],
+      rating: 4.8,
+      downloads: '95K+',
+      impact: '90% accuracy',
+      image: 'aiplantscheking.jpg',
+      link: 'https://play.google.com/store/apps/details?id=com.appsait.plantcheck',
+      features: [
+        'AI Disease Detection',
+        'Care Recommendations',
+        'Plant Database',
+        'Progress Tracking',
+        'Expert Tips'
+      ]
+    },
+    {
+      id: 10,
+      category: 'tools',
+      title: 'CV Builder Pro',
+      description: 'Professional CV/Resume builder with AI-powered templates and optimization suggestions.',
+      longDescription: 'Create stunning resumes with AI assistance. Smart suggestions for better content, ATS optimization, and professional templates. Helped 50K+ job seekers land interviews.',
+      tech: ['React', 'Node.js', 'MongoDB', 'AI/ML', 'PDF Generation'],
+      rating: 4.7,
+      downloads: '110K+',
+      impact: '45% more interviews',
+      image: 'cvbuilder.jpg',
+      link: 'https://play.google.com/store/apps/details?id=com.appsait.cvbuilder',
+      features: [
+        'AI Content Suggestions',
+        'ATS Optimization',
+        'Professional Templates',
+        'PDF Export',
+        'Job Matching'
+      ]
+    },
+    {
+      id: 11,
+      category: 'social',
+      title: 'EasyToShare',
+      description: 'Simple content sharing platform with built-in editing and social media integration.',
+      longDescription: 'Seamlessly share photos, videos, and documents across all social platforms. Built-in editor with filters, effects, and instant publishing. Used by 200K+ content creators daily.',
+      tech: ['React Native', 'Firebase', 'Cloud Storage', 'Social APIs', 'Node.js'],
+      rating: 4.6,
+      downloads: '200K+',
+      impact: '5x faster sharing',
+      image: 'easytoshare.jpg',
+      link: 'https://play.google.com/store/apps/details?id=com.appsait.easytoshare',
+      features: [
+        'Multi-Platform Sharing',
+        'Built-in Editor',
+        'Batch Upload',
+        'Schedule Posts',
+        'Analytics Dashboard'
       ]
     }
   ];
 
   const categories = [
-    { id: 'all', label: 'All Projects', count: 6 },
+    { id: 'all', label: 'All Projects', count: 9 },
     { id: 'healthcare', label: 'Healthcare', count: 1 },
+    { id: 'productivity', label: 'Productivity', count: 3 },
+    { id: 'entertainment', label: 'Entertainment', count: 1 },
+    { id: 'gaming', label: 'Gaming', count: 1 },
+    { id: 'education', label: 'Education', count: 2 },
     { id: 'ecommerce', label: 'E-commerce', count: 1 },
-    { id: 'fashion', label: 'Fashion', count: 1 },
-    { id: 'hospitality', label: 'Hospitality', count: 1 },
-    { id: 'education', label: 'Education', count: 1 },
-    { id: 'finance', label: 'Finance', count: 1 }
+    { id: 'tools', label: 'Tools', count: 3 },
+    { id: 'social', label: 'Social', count: 1 }
   ];
 
   const filteredItems = activeFilter === 'all' 
@@ -147,11 +249,11 @@ const PortfolioPage = () => {
     : portfolioItems.filter(item => item.category === activeFilter);
 
   const stats = [
-    { icon: <Download className="w-6 h-6" />, value: '500K+', label: 'Total Downloads' },
-    { icon: <Users className="w-6 h-6" />, value: '200+', label: 'Happy Clients' },
+    { icon: <Download className="w-6 h-6" />, value: '1.2M+', label: 'Total Downloads' },
+    { icon: <Users className="w-6 h-6" />, value: '500+', label: 'Happy Clients' },
     { icon: <TrendingUp className="w-6 h-6" />, value: '4.8', label: 'Average Rating' },
-    { icon: <Globe className="w-6 h-6" />, value: '15+', label: 'Countries Served' },
-    { icon: <Award className="w-6 h-6" />, value: '50+', label: 'Awards Won' }
+    { icon: <Globe className="w-6 h-6" />, value: '25+', label: 'Countries Served' },
+    { icon: <Award className="w-6 h-6" />, value: '75+', label: 'Awards Won' }
   ];
 
   return (
@@ -228,52 +330,59 @@ const PortfolioPage = () => {
             {filteredItems.map((item, index) => (
               <FadeIn key={item.id} delay={index * 0.1}>
                 <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
-                  <div className="grid lg:grid-cols-2 gap-8">
+                  <div className="grid lg:grid-cols-2 gap-8 items-stretch">
                     {/* Left Side - Visuals */}
-                    <div className="p-8">
-                      <div className={`h-64 rounded-2xl ${item.image} relative overflow-hidden mb-6`}>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="text-8xl font-bold text-white/20">{item.title.charAt(0)}</div>
-                        </div>
-                        <div className="absolute top-4 right-4 flex items-center space-x-1 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                          <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-                          <span className="font-semibold text-gray-900">{item.rating}</span>
-                        </div>
-                        <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                          <span className="font-semibold text-gray-900">{item.downloads} Downloads</span>
-                        </div>
+                    <div className="relative overflow-hidden bg-gray-100 flex items-center justify-center min-h-96">
+                      <img
+                        src={`/${item.image}`}
+                        alt={item.title}
+                        // className="w-full h-full object-cover"
+                        className="w-full h-full object-contain scale-95"
+                      />
+                      <div className="absolute top-4 right-4 flex items-center space-x-1 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                        <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                        <span className="font-semibold text-gray-900">{item.rating}</span>
+                      </div>
+                      <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                        <span className="font-semibold text-gray-900">{item.downloads} Downloads</span>
                       </div>
 
-                      <div className="flex flex-wrap gap-3 mb-6">
-                        {item.tech.map((tech) => (
-                          <span key={tech} className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full font-medium">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-4">
-                          <div className="flex items-center space-x-1">
-                            <Smartphone className="w-5 h-5 text-primary" />
-                            <span className="text-sm text-gray-600">Mobile App</span>
+                      {/* Content Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-between p-8">
+                        <div />
+                        <div>
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {item.tech.map((tech) => (
+                              <span key={tech} className="px-3 py-1 bg-white/20 text-white rounded-full text-sm font-medium backdrop-blur-sm">
+                                {tech}
+                              </span>
+                            ))}
                           </div>
-                          <div className="flex items-center space-x-1">
-                            <TrendingUp className="w-5 h-5 text-green-500" />
-                            <span className="text-sm text-gray-600">{item.impact}</span>
+                          
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center space-x-3">
+                              <div className="flex items-center space-x-1">
+                                <Smartphone className="w-5 h-5 text-white" />
+                                <span className="text-sm text-white">Mobile App</span>
+                              </div>
+                              <div className="flex items-center space-x-1">
+                                <TrendingUp className="w-5 h-5 text-green-300" />
+                                <span className="text-sm text-white">{item.impact}</span>
+                              </div>
+                            </div>
+                            <motion.a
+                              href={item.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                              className="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-full font-semibold flex items-center space-x-2 text-sm"
+                            >
+                              <Play className="w-4 h-4" />
+                              <span>View</span>
+                            </motion.a>
                           </div>
                         </div>
-                        <motion.a
-                          href={item.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold flex items-center space-x-2"
-                        >
-                          <Play className="w-5 h-5" />
-                          <span>View on Play Store</span>
-                        </motion.a>
                       </div>
                     </div>
 
