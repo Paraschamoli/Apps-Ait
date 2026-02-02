@@ -75,7 +75,7 @@ const Services = () => {
             <motion.div
               key={service.id}
               className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow group h-full flex flex-col"
-              whileHover={-10  }
+              whileHover={{ y: -10 }}
             >
               <FadeIn delay={index * 0.1}>
                 {/* Icon */}
