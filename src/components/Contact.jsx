@@ -63,12 +63,14 @@ const Contact = () => {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Us",
       details: "contact@appsait.com",
+      link: "mailto:contact@appsait.com",
       description: "We'll respond within 24 hours"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
       details: "+1 (555) 123-4567",
+      link: "tel:+15551234567",
       description: "Mon-Fri, 9AM-6PM EST"
     },
     {
@@ -120,7 +122,13 @@ const Contact = () => {
                       </div>
                       <div>
                         <h4 className="font-bold text-gray-900">{info.title}</h4>
-                        <p className="text-lg text-gray-800">{info.details}</p>
+                        {info.link ? (
+                          <a href={info.link} className="text-lg text-gray-800 hover:text-primary transition-colors">
+                            {info.details}
+                          </a>
+                        ) : (
+                          <p className="text-lg text-gray-800">{info.details}</p>
+                        )}
                         <p className="text-gray-600 text-sm">{info.description}</p>
                       </div>
                     </motion.div>

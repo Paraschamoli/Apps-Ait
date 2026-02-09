@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Linkedin, Instagram, Youtube, Github, ArrowUp } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube, FaGithub } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -40,12 +42,13 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <Facebook size={20} />, href: 'https://facebook.com/appsait', label: 'Facebook' },
-    { icon: <Twitter size={20} />, href: 'https://twitter.com/appsait', label: 'Twitter' },
-    { icon: <Linkedin size={20} />, href: 'https://linkedin.com/company/appsait', label: 'LinkedIn' },
-    { icon: <Instagram size={20} />, href: 'https://instagram.com/appsait', label: 'Instagram' },
-    { icon: <Youtube size={20} />, href: 'https://youtube.com/appsait', label: 'YouTube' },
-    { icon: <Github size={20} />, href: 'https://github.com/appsait', label: 'GitHub' },
+    { icon: <FaFacebookF size={20} />, href: 'https://facebook.com/appsait', label: 'Facebook' },
+    { icon: <FaXTwitter size={20} />, href: 'https://twitter.com/appsait', label: 'X' },
+    { icon: <FaLinkedinIn size={20} />, href: 'https://linkedin.com/company/appsait', label: 'LinkedIn' },
+    { icon: <FaInstagram size={20} />, href: 'https://instagram.com/appsait', label: 'Instagram' },
+    { icon: <FaYoutube size={20} />, href: 'https://youtube.com/appsait', label: 'YouTube' },
+    { icon: <FaGithub size={20} />, href: 'https://github.com/appsait', label: 'GitHub' },
+
   ];
 
   return (
@@ -55,9 +58,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">A</span>
-              </div>
+              <img src="/logo.jpg" alt="Apps AiT Logo" className="w-12 h-12 rounded-lg object-contain" />
               <span className="text-2xl font-bold">Apps AiT</span>
             </div>
             <p className="text-gray-400 mb-6">
@@ -162,9 +163,9 @@ const Footer = () => {
               <Link to="/cookies" className="text-gray-400 hover:text-white transition-colors">
                 Cookie Policy
               </Link>
-              <a href="https://appsait.com/contact-us/" className="text-gray-400 hover:text-white transition-colors">
+              <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">
                 Contact
-              </a>
+              </Link>
             </div>
 
             <motion.button

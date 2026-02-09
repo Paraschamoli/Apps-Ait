@@ -1,4 +1,4 @@
-import { Code2, Smartphone, Megaphone, CheckCircle, Shield, Users } from 'lucide-react';
+import { Code2, Megaphone, CheckCircle, Shield, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 import FadeIn from './animations/FadeIn';
 
