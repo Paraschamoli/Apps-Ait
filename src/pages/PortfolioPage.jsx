@@ -1,247 +1,153 @@
 import { useState } from 'react';
 import { 
-  ExternalLink, Play, Star, Download, Users, 
-  TrendingUp, Globe, Smartphone, Award
+  Star, Download, Users, TrendingUp, Globe, Award,
+  ChevronRight, Filter, Sparkles, Smartphone, Monitor,
+  TabletSmartphone, Brain, Heart, BookOpen, Briefcase,
+  Zap, Target, BarChart3
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import FadeIn from '../components/animations/FadeIn';
 
 const PortfolioPage = () => {
   const [activeFilter, setActiveFilter] = useState('all');
+  const [hoveredProject, setHoveredProject] = useState(null);
 
   const portfolioItems = [
     {
       id: 1,
       category: 'healthcare',
       title: 'HealthWheelth',
+      subtitle: 'AI-Powered Healthcare Platform',
       description: 'A comprehensive healthcare management platform with AI-powered diagnostics and patient monitoring system.',
-      longDescription: 'Revolutionizing patient care with real-time monitoring, AI diagnostics, and seamless integration with hospital systems. Increased patient engagement by 300% and reduced administrative workload by 45%.',
       tech: ['Flutter', 'AI/ML', 'Firebase', 'Node.js', 'TensorFlow'],
       rating: 4.9,
       downloads: '50K+',
       impact: '40% faster diagnosis',
       image: 'healthwheelth.jpg',
-      link: 'https://play.google.com/store/apps/details?id=com.appsait.healthcare',
-      features: [
-        'AI Diagnostic Assistant',
-        'Telemedicine Integration',
-        'Patient Record Management',
-        'Medication Tracker',
-        'Emergency Alert System'
+      color: 'from-emerald-50 to-cyan-50',
+      accentColor: 'emerald',
+      icon: <Heart className="w-6 h-6" />,
+      platforms: ['iOS', 'Android', 'Web'],
+      metrics: [
+        { label: 'Patient Engagement', value: '+300%' },
+        { label: 'Admin Workload', value: '-45%' },
+        { label: 'Diagnosis Speed', value: '+40%' }
       ]
     },
     {
       id: 2,
       category: 'productivity',
       title: 'Image Editor Pro',
-      description: 'Powerful image editing application with advanced filters, effects, and professional-grade tools for content creators.',
-      longDescription: 'Empowering creators with intuitive image editing capabilities, AI-powered enhancements, and batch processing. Users report 80% faster editing workflows and professional-quality results. Used by 100K+ creators worldwide.',
-      tech: ['React Native', 'OpenCV', 'Canvas API', 'WebGL', 'Firebase'],
+      subtitle: 'Professional Creative Suite',
+      description: 'Powerful image editing application with advanced filters, effects, and professional-grade tools.',
+      tech: ['React Native', 'OpenCV', 'Canvas API', 'WebGL'],
       rating: 4.8,
       downloads: '120K+',
       impact: '80% faster workflows',
       image: 'imageeditor.jpg',
-      link: 'https://play.google.com/store/apps/details?id=com.appsait.imageeditor',
-      features: [
-        'Advanced Filters & Effects',
-        'Batch Processing',
-        'Layer Support',
-        'AI Enhancement',
-        'Cloud Sync'
+      color: 'from-violet-50 to-purple-50',
+      accentColor: 'violet',
+      icon: <Monitor className="w-6 h-6" />,
+      platforms: ['iOS', 'Android'],
+      metrics: [
+        { label: 'Editing Speed', value: '+80%' },
+        { label: 'User Satisfaction', value: '4.8/5' },
+        { label: 'Active Creators', value: '100K+' }
       ]
     },
     {
       id: 3,
-      category: 'entertainment',
+      category: 'gaming',
       title: 'Infinity Games',
+      subtitle: 'Endless Entertainment Platform',
       description: 'Engaging mobile gaming platform featuring infinite gameplay mechanics and multiplayer capabilities.',
-      longDescription: 'Creating endless entertainment with procedurally generated content, competitive multiplayer modes, and social features. Achieved 95% user retention rate and over 500K monthly active users with viral social sharing.',
-      tech: ['Unity', 'C#', 'Multiplayer Networking', 'Firebase', 'Analytics'],
+      tech: ['Unity', 'C#', 'Multiplayer', 'Firebase'],
       rating: 4.7,
       downloads: '250K+',
       impact: '95% retention rate',
       image: 'infinity.jpg',
-      link: 'https://play.google.com/store/apps/details?id=com.appsait.infinity',
-      features: [
-        'Infinite Gameplay',
-        'Multiplayer Mode',
-        'Social Features',
-        'Leaderboards',
-        'Daily Rewards'
+      color: 'from-orange-50 to-amber-50',
+      accentColor: 'orange',
+      icon: <Sparkles className="w-6 h-6" />,
+      platforms: ['iOS', 'Android'],
+      metrics: [
+        { label: 'User Retention', value: '95%' },
+        { label: 'Monthly Users', value: '500K+' },
+        { label: 'Avg. Play Time', value: '45min' }
       ]
     },
     {
       id: 4,
-      category: 'gaming',
-      title: 'Mind Game Master',
-      description: 'Interactive puzzle and brain-training app designed to enhance cognitive skills through engaging games.',
-      longDescription: 'Boosting mental agility with scientifically-designed puzzles, progressive difficulty levels, and AI-powered personalization. Users improve their cognitive performance by 40% and enjoy daily brain training sessions.',
-      tech: ['Flutter', 'GameKit', 'Machine Learning', 'Firebase', 'Analytics'],
+      category: 'education',
+      title: 'Smart Learning',
+      subtitle: 'Adaptive Learning Ecosystem',
+      description: 'Comprehensive e-learning platform with adaptive learning paths and interactive content.',
+      tech: ['React', 'Python', 'ML', 'WebRTC'],
       rating: 4.8,
-      downloads: '180K+',
-      impact: '40% cognitive boost',
-      image: 'mindgame.jpg',
-      link: 'https://play.google.com/store/apps/details?id=com.appsait.mindgame',
-      features: [
-        'Brain Training Games',
-        'Progressive Difficulty',
-        'Performance Tracking',
-        'Achievements System',
-        'Daily Challenges'
+      downloads: '160K+',
+      impact: '75% better outcomes',
+      image: 'smartlearningplateform.jpg',
+      color: 'from-blue-50 to-indigo-50',
+      accentColor: 'blue',
+      icon: <BookOpen className="w-6 h-6" />,
+      platforms: ['Web', 'iOS', 'Android'],
+      metrics: [
+        { label: 'Learning Outcomes', value: '+75%' },
+        { label: 'Student Engagement', value: '+60%' },
+        { label: 'Course Completion', value: '85%' }
       ]
     },
     {
       id: 5,
       category: 'productivity',
       title: 'PDF Reader Master',
-      description: 'Comprehensive PDF management solution with annotation, form-filling, and advanced document handling.',
-      longDescription: 'Streamlining document workflows with powerful PDF tools, OCR capabilities, and seamless cloud integration. Businesses report 50% reduction in document processing time and improved team collaboration.',
-      tech: ['React Native', 'PDFKit', 'OCR', 'Cloud Storage', 'Node.js'],
+      subtitle: 'Document Workflow Solution',
+      description: 'Comprehensive PDF management with annotation, form-filling, and advanced document handling.',
+      tech: ['React Native', 'PDFKit', 'OCR', 'Cloud'],
       rating: 4.9,
       downloads: '200K+',
       impact: '50% time savings',
       image: 'pdfreader.jpg',
-      link: 'https://play.google.com/store/apps/details?id=com.appsait.pdfreader',
-      features: [
-        'Advanced PDF Editing',
-        'OCR Technology',
-        'Form Filling',
-        'Annotation Tools',
-        'Cloud Integration'
+      color: 'from-red-50 to-rose-50',
+      accentColor: 'red',
+      icon: <Briefcase className="w-6 h-6" />,
+      platforms: ['iOS', 'Android', 'Desktop'],
+      metrics: [
+        { label: 'Time Saved', value: '50%' },
+        { label: 'Team Productivity', value: '+40%' },
+        { label: 'User Rating', value: '4.9/5' }
       ]
     },
     {
       id: 6,
-      category: 'productivity',
-      title: 'Screen Recorder Pro',
-      description: 'Professional screen recording and video capture application with editing capabilities and instant sharing.',
-      longDescription: 'Enabling content creators to capture, edit, and share professional-quality screen recordings. Supporting up to 4K resolution with minimal performance impact, used by educators, developers, and creators for tutorials and presentations.',
-      tech: ['Android NDK', 'H.264', 'FFmpeg', 'WebRTC', 'Cloud API'],
-      rating: 4.8,
-      downloads: '150K+',
-      impact: '4K quality capture',
-      image: 'screenrecorder.jpg',
-      link: 'https://play.google.com/store/apps/details?id=com.appsait.screenrecorder',
-      features: [
-        '4K Recording',
-        'Live Streaming',
-        'Built-in Editor',
-        'Audio Control',
-        'Instant Sharing'
-      ]
-    },
-    {
-      id: 7,
-      category: 'education',
-      title: 'Smart Attendance System',
-      description: 'Intelligent attendance management solution using biometric recognition and real-time reporting.',
-      longDescription: 'Revolutionizing classroom and office attendance with facial recognition, geolocation verification, and automated reporting. Schools and organizations achieved 99% accuracy in attendance tracking and eliminated manual paperwork.',
-      tech: ['Flutter', 'Facial Recognition', 'Firebase', 'Cloud Functions', 'PostgreSQL'],
-      rating: 4.9,
-      downloads: '75K+',
-      impact: '99% accuracy',
-      image: 'smartattendence.jpg',
-      link: 'https://play.google.com/store/apps/details?id=com.appsait.attendance',
-      features: [
-        'Facial Recognition',
-        'Real-time Reporting',
-        'Geolocation Verify',
-        'Automated Reports',
-        'Analytics Dashboard'
-      ]
-    },
-    {
-      id: 8,
-      category: 'education',
-      title: 'Smart Learning Platform',
-      description: 'Comprehensive e-learning ecosystem with adaptive learning paths, interactive content, and progress analytics.',
-      longDescription: 'Transforming education through personalized learning experiences, AI-powered content recommendations, and comprehensive progress tracking. Students experience 75% improvement in learning outcomes and enhanced engagement.',
-      tech: ['React', 'Python', 'Machine Learning', 'WebRTC', 'PostgreSQL'],
-      rating: 4.8,
-      downloads: '160K+',
-      impact: '75% better outcomes',
-      image: 'smartlearningplateform.jpg',
-      link: 'https://play.google.com/store/apps/details?id=com.appsait.smartlearning',
-      features: [
-        'Adaptive Learning Paths',
-        'AI Recommendations',
-        'Live Classes',
-        'Progress Analytics',
-        'Peer Collaboration'
-      ]
-    },
-    {
-      id: 9,
       category: 'tools',
       title: 'AI Plant Checking',
-      description: 'Smart plant health monitoring app using AI to detect diseases and provide care recommendations.',
-      longDescription: 'Helping gardeners and farmers identify plant diseases instantly with AI-powered image recognition. Provides instant treatment recommendations and care tips. Users report 90% accuracy in disease detection.',
-      tech: ['Flutter', 'TensorFlow', 'Firebase', 'OpenCV', 'Node.js'],
+      subtitle: 'Smart Gardening Assistant',
+      description: 'AI-powered plant health monitoring app for disease detection and care recommendations.',
+      tech: ['Flutter', 'TensorFlow', 'OpenCV', 'Node.js'],
       rating: 4.8,
       downloads: '95K+',
       impact: '90% accuracy',
       image: 'aiplantscheking.jpg',
-      link: 'https://play.google.com/store/apps/details?id=com.appsait.plantcheck',
-      features: [
-        'AI Disease Detection',
-        'Care Recommendations',
-        'Plant Database',
-        'Progress Tracking',
-        'Expert Tips'
-      ]
-    },
-    {
-      id: 10,
-      category: 'tools',
-      title: 'CV Builder Pro',
-      description: 'Professional CV/Resume builder with AI-powered templates and optimization suggestions.',
-      longDescription: 'Create stunning resumes with AI assistance. Smart suggestions for better content, ATS optimization, and professional templates. Helped 50K+ job seekers land interviews.',
-      tech: ['React', 'Node.js', 'MongoDB', 'AI/ML', 'PDF Generation'],
-      rating: 4.7,
-      downloads: '110K+',
-      impact: '45% more interviews',
-      image: 'cvbuilder.jpg',
-      link: 'https://play.google.com/store/apps/details?id=com.appsait.cvbuilder',
-      features: [
-        'AI Content Suggestions',
-        'ATS Optimization',
-        'Professional Templates',
-        'PDF Export',
-        'Job Matching'
-      ]
-    },
-    {
-      id: 11,
-      category: 'social',
-      title: 'EasyToShare',
-      description: 'Simple content sharing platform with built-in editing and social media integration.',
-      longDescription: 'Seamlessly share photos, videos, and documents across all social platforms. Built-in editor with filters, effects, and instant publishing. Used by 200K+ content creators daily.',
-      tech: ['React Native', 'Firebase', 'Cloud Storage', 'Social APIs', 'Node.js'],
-      rating: 4.6,
-      downloads: '200K+',
-      impact: '5x faster sharing',
-      image: 'easytoshare.jpg',
-      link: 'https://play.google.com/store/apps/details?id=com.appsait.easytoshare',
-      features: [
-        'Multi-Platform Sharing',
-        'Built-in Editor',
-        'Batch Upload',
-        'Schedule Posts',
-        'Analytics Dashboard'
+      color: 'from-green-50 to-emerald-50',
+      accentColor: 'green',
+      icon: <Target className="w-6 h-6" />,
+      platforms: ['iOS', 'Android'],
+      metrics: [
+        { label: 'Disease Detection', value: '90%' },
+        { label: 'User Accuracy', value: '95%' },
+        { label: 'Gardener Satisfaction', value: '4.8/5' }
       ]
     }
   ];
 
   const categories = [
-    { id: 'all', label: 'All Projects', count: 9 },
-    { id: 'healthcare', label: 'Healthcare', count: 1 },
-    { id: 'productivity', label: 'Productivity', count: 3 },
-    { id: 'entertainment', label: 'Entertainment', count: 1 },
-    { id: 'gaming', label: 'Gaming', count: 1 },
-    { id: 'education', label: 'Education', count: 2 },
-    { id: 'ecommerce', label: 'E-commerce', count: 1 },
-    { id: 'tools', label: 'Tools', count: 3 },
-    { id: 'social', label: 'Social', count: 1 }
+    { id: 'all', label: 'All', icon: <Sparkles className="w-4 h-4" /> },
+    { id: 'productivity', label: 'Productivity', icon: <Zap className="w-4 h-4" /> },
+    { id: 'healthcare', label: 'Healthcare', icon: <Heart className="w-4 h-4" /> },
+    { id: 'education', label: 'Education', icon: <BookOpen className="w-4 h-4" /> },
+    { id: 'gaming', label: 'Gaming', icon: <Sparkles className="w-4 h-4" /> },
+    { id: 'tools', label: 'Tools', icon: <Briefcase className="w-4 h-4" /> },
   ];
 
   const filteredItems = activeFilter === 'all' 
@@ -249,204 +155,222 @@ const PortfolioPage = () => {
     : portfolioItems.filter(item => item.category === activeFilter);
 
   const stats = [
-    { icon: <Download className="w-6 h-6" />, value: '1.2M+', label: 'Total Downloads' },
-    { icon: <Users className="w-6 h-6" />, value: '500+', label: 'Happy Clients' },
-    { icon: <TrendingUp className="w-6 h-6" />, value: '4.8', label: 'Average Rating' },
-    { icon: <Globe className="w-6 h-6" />, value: '25+', label: 'Countries Served' },
-    { icon: <Award className="w-6 h-6" />, value: '75+', label: 'Awards Won' }
+    { icon: <Download className="w-5 h-5" />, value: '1.2M+', label: 'Downloads', trend: '+25%' },
+    { icon: <Users className="w-5 h-5" />, value: '500+', label: 'Clients', trend: '+15%' },
+    { icon: <Star className="w-5 h-5" />, value: '4.8', label: 'Avg Rating', trend: '' },
+    { icon: <Globe className="w-5 h-5" />, value: '25+', label: 'Countries', trend: '+5' },
+    { icon: <Award className="w-5 h-5" />, value: '75+', label: 'Awards', trend: '2024' },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <div className="pt-20">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50/50">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary/5 via-white to-secondary/5 overflow-hidden">
-        <div className="container mx-auto px-4">
+      <section className="pt-32 pb-20">
+        <div className="container mx-auto px-6 max-w-7xl">
           <FadeIn>
-            <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Portfolio</span>
+            <div className="text-center max-w-3xl mx-auto mb-20">
+              <div className="inline-flex items-center space-x-2 text-sm text-gray-500 mb-6">
+              
+              </div>
+              <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-8 tracking-tight">
+                Crafting Digital
+                <span className="block mt-2 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+                  Excellence
+                </span>
               </h1>
-              <p className="text-xl text-gray-600 mb-10">
-                Discover how we've transformed ideas into successful digital products across various industries. 
-                Each project showcases our commitment to innovation, quality, and client success.
+              <p className="text-xl text-gray-600 leading-relaxed">
+                A curated showcase of transformative digital products that redefine user experiences 
+                across industries. Each project represents our commitment to innovation, precision, 
+                and impactful design.
               </p>
             </div>
           </FadeIn>
 
-          {/* Stats */}
-          <FadeIn delay={0.3}>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-6xl mx-auto mt-16">
+          {/* Stats Bar */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="max-w-5xl mx-auto mb-20"
+          >
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
               {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center"
-                >
-                  <div className="text-primary mb-3 flex justify-center">
-                    {stat.icon}
+                <div key={index} className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-gray-50 to-white rounded-2xl transform group-hover:scale-105 transition-transform duration-300 shadow-sm border border-gray-100" />
+                  <div className="relative p-6 text-center">
+                    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-gray-900 to-gray-700 text-white mb-4`}>
+                      {stat.icon}
+                    </div>
+                    <div className="flex items-baseline justify-center space-x-2 mb-2">
+                      <div className="text-3xl font-bold text-gray-900">{stat.value}</div>
+                      {stat.trend && (
+                        <div className="text-sm font-medium text-emerald-600">{stat.trend}</div>
+                      )}
+                    </div>
+                    <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
                   </div>
-                  <div className="text-3xl font-bold text-gray-900">{stat.value}</div>
-                  <div className="text-gray-600">{stat.label}</div>
-                </motion.div>
+                </div>
               ))}
             </div>
-          </FadeIn>
+          </motion.div>
         </div>
       </section>
 
       {/* Portfolio Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-10 pb-32">
+        <div className="container mx-auto px-6 max-w-7xl">
           {/* Filter */}
-          <FadeIn>
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap items-center justify-between mb-16">
+            <div className="flex items-center space-x-3 mb-4 md:mb-0">
+              <Filter className="w-5 h-5 text-gray-400" />
+              <span className="text-sm font-medium text-gray-600">Filter by category</span>
+            </div>
+            <div className="flex flex-wrap gap-3">
               {categories.map((category) => (
                 <motion.button
                   key={category.id}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setActiveFilter(category.id)}
-                  className={`px-6 py-3 rounded-full font-medium transition-all flex items-center space-x-2 ${
+                  className={`px-5 py-2.5 rounded-xl font-medium transition-all flex items-center space-x-2 backdrop-blur-sm ${
                     activeFilter === category.id
-                      ? 'bg-gradient-to-r from-primary to-secondary text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      ? 'bg-gradient-to-r from-gray-900 to-gray-700 text-white shadow-lg'
+                      : 'bg-white/80 text-gray-700 hover:bg-white border border-gray-200 shadow-sm'
                   }`}
                 >
+                  {category.icon}
                   <span>{category.label}</span>
-                  <span className={`text-sm px-2 py-1 rounded-full ${
-                    activeFilter === category.id
-                      ? 'bg-white/20'
-                      : 'bg-gray-300 text-gray-700'
-                  }`}>
-                    {category.count}
-                  </span>
                 </motion.button>
               ))}
             </div>
-          </FadeIn>
+          </div>
 
           {/* Portfolio Grid */}
-          <div className="space-y-16">
-            {filteredItems.map((item, index) => (
-              <FadeIn key={item.id} delay={index * 0.1}>
-                <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
-                  <div className="grid lg:grid-cols-2 gap-8 items-stretch">
-                    {/* Left Side - Visuals */}
-                    <div className="relative overflow-hidden bg-gray-100 flex items-center justify-center min-h-96">
-                      <img
-                        src={`/${item.image}`}
-                        alt={item.title}
-                        // className="w-full h-full object-cover"
-                        className="w-full h-full object-contain scale-95"
-                      />
-                      <div className="absolute top-4 right-4 flex items-center space-x-1 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+          >
+            {filteredItems.map((item) => (
+              <motion.div
+                key={item.id}
+                variants={itemVariants}
+                whileHover={{ y: -8 }}
+                onMouseEnter={() => setHoveredProject(item.id)}
+                onMouseLeave={() => setHoveredProject(null)}
+                className="group relative"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50 rounded-3xl transform group-hover:scale-[1.02] transition-all duration-500 shadow-xl border border-gray-100" />
+                
+                <div className="relative overflow-hidden rounded-3xl">
+                  {/* Project Image */}
+                  <div className={`p-8 ${item.color}`}>
+                    <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden bg-white shadow-inner">
+                      <div className="absolute inset-0 flex items-center justify-center p-8">
+                        <img
+                          src={`/${item.image}`}
+                          alt={item.title}
+                          className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                        />
+                      </div>
+                      {/* Rating Badge */}
+                      <div className="absolute top-4 right-4 flex items-center space-x-1 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-sm">
                         <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
                         <span className="font-semibold text-gray-900">{item.rating}</span>
                       </div>
-                      <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                        <span className="font-semibold text-gray-900">{item.downloads} Downloads</span>
-                      </div>
+                    </div>
+                  </div>
 
-                      {/* Content Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-between p-8">
-                        <div />
-                        <div>
-                          <div className="flex flex-wrap gap-2 mb-4">
-                            {item.tech.map((tech) => (
-                              <span key={tech} className="px-3 py-1 bg-white/20 text-white rounded-full text-sm font-medium backdrop-blur-sm">
-                                {tech}
-                              </span>
-                            ))}
+                  {/* Content */}
+                  <div className="p-8">
+                    <div className="flex items-start justify-between mb-6">
+                      <div>
+                        <div className="flex items-center space-x-3 mb-2">
+                          <div className={`p-2 rounded-xl bg-gradient-to-br from-${item.accentColor}-100 to-${item.accentColor}-50`}>
+                            {item.icon}
                           </div>
-                          
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center space-x-3">
-                              <div className="flex items-center space-x-1">
-                                <Smartphone className="w-5 h-5 text-white" />
-                                <span className="text-sm text-white">Mobile App</span>
-                              </div>
-                              <div className="flex items-center space-x-1">
-                                <TrendingUp className="w-5 h-5 text-green-300" />
-                                <span className="text-sm text-white">{item.impact}</span>
-                              </div>
-                            </div>
-                            <motion.a
-                              href={item.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              whileHover={{ scale: 1.05 }}
-                              whileTap={{ scale: 0.95 }}
-                              className="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-full font-semibold flex items-center space-x-2 text-sm"
-                            >
-                              <Play className="w-4 h-4" />
-                              <span>View</span>
-                            </motion.a>
-                          </div>
+                          <span className="text-sm font-medium text-gray-500">{item.subtitle}</span>
                         </div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                        <p className="text-gray-600 leading-relaxed">{item.description}</p>
                       </div>
                     </div>
 
-                    {/* Right Side - Details */}
-                    <div className="p-8 lg:border-l lg:border-gray-200">
-                      <h3 className="text-3xl font-bold text-gray-900 mb-4">{item.title}</h3>
-                      <p className="text-gray-600 text-lg mb-6">{item.description}</p>
-                      
-                      <div className="mb-8">
-                        <h4 className="text-xl font-bold text-gray-900 mb-4">Key Features</h4>
-                        <ul className="space-y-3">
-                          {item.features.map((feature, i) => (
-                            <li key={i} className="flex items-center space-x-3">
-                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0" />
-                              <span className="text-gray-700">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
+                    {/* Tech Stack */}
+                    <div className="mb-6">
+                      <div className="flex flex-wrap gap-2">
+                        {item.tech.map((tech, index) => (
+                          <span 
+                            key={index}
+                            className="px-3 py-1.5 text-sm font-medium bg-white border border-gray-200 text-gray-700 rounded-lg"
+                          >
+                            {tech}
+                          </span>
+                        ))}
                       </div>
+                    </div>
 
-                      <div className="bg-gray-50 rounded-xl p-6">
-                        <h4 className="text-lg font-bold text-gray-900 mb-3">Project Impact</h4>
-                        <p className="text-gray-600">{item.longDescription}</p>
+                    {/* Metrics */}
+                    <div className="grid grid-cols-3 gap-4 mb-6">
+                      {item.metrics.map((metric, index) => (
+                        <div key={index} className="text-center">
+                          <div className={`text-xl font-bold text-gray-900 mb-1`}>{metric.value}</div>
+                          <div className="text-xs text-gray-500">{metric.label}</div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Platform & Downloads */}
+                    <div className="flex items-center justify-between pt-6 border-t border-gray-100">
+                      <div className="flex items-center space-x-3">
+                        {item.platforms.map((platform) => (
+                          <div key={platform} className="flex items-center space-x-1 text-gray-500">
+                            {platform === 'iOS' || platform === 'Android' ? (
+                              <Smartphone className="w-4 h-4" />
+                            ) : platform === 'Web' ? (
+                              <Globe className="w-4 h-4" />
+                            ) : (
+                              <Monitor className="w-4 h-4" />
+                            )}
+                            <span className="text-sm">{platform}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="flex items-center space-x-2 text-gray-600">
+                        <Download className="w-4 h-4" />
+                        <span className="text-sm font-medium">{item.downloads}</span>
                       </div>
                     </div>
                   </div>
                 </div>
-              </FadeIn>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
-          {/* CTA */}
-          <FadeIn delay={0.5}>
-            <div className="text-center mt-20">
-              <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-3xl p-12 max-w-4xl mx-auto">
-                <h3 className="text-3xl font-bold text-gray-900 mb-6">Ready to Start Your Project?</h3>
-                <p className="text-xl text-gray-600 mb-8">
-                  Let's build something amazing together. View our complete portfolio on Google Play.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <motion.a
-                    href="https://play.google.com/store/apps/dev?id=6756875694075191085"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center justify-center space-x-3"
-                  >
-                    <ExternalLink className="w-6 h-6" />
-                    <span>View All Projects</span>
-                  </motion.a>
-                  <motion.a
-                    href="https://appsait.com/contact-us/"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full font-semibold text-lg flex items-center justify-center space-x-3"
-                  >
-                    <span>Get in Touch</span>
-                    <span className="text-2xl">→</span>
-                  </motion.a>
-                </div>
-              </div>
-            </div>
-          </FadeIn>
+         
         </div>
       </section>
     </div>

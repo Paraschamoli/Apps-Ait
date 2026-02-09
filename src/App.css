@@ -1,15 +1,15 @@
 @import 'tailwindcss';
 
 :root {
-  --primary: #2563eb;
-  --secondary: #7c3aed;
-  --accent: #06b6d4;
+  --primary: #c2410c;
+  --secondary: #ea580c;
+  --accent: #fb923c;
 }
 
 @theme {
-  --color-primary: #2563eb;
-  --color-secondary: #7c3aed;
-  --color-accent: #06b6d4;
+  --color-primary: #c2410c;
+  --color-secondary: #ea580c;
+  --color-accent: #fb923c;
   --font-sans: 'Inter', system-ui, sans-serif;
   
   --animate-float: float 6s ease-in-out infinite;
