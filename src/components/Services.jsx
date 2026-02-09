@@ -87,9 +87,7 @@ const Services = () => {
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 min-h-[64px]">{service.title}</h3>
 
                 {/* Description */}
-                
-                
-              <p className="text-gray-600 mb-6 min-h-[72px]">
+                <p className="text-gray-600 mb-6 min-h-[72px]">
                 {service.description}
                </p>
                 {/* Features */}
