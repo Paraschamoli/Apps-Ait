@@ -1,4 +1,4 @@
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import FadeIn from './animations/FadeIn';
 
@@ -7,124 +7,50 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50" />
-      <div className="absolute top-1/4 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <FadeIn direction="right">
-            <div>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 }}
-                className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary font-semibold mb-6"
-              >
-                🚀 Trusted by 200+ Companies Worldwide
-              </motion.div>
+        <div className="max-w-4xl mx-auto text-center">
+          <FadeIn>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary font-semibold mb-6"
+            >
+              🚀 Trusted by 200+ Companies Worldwide
+            </motion.div>
 
-              <h1 className="text-5xl md:text-7xl font-bold text-gray-900 leading-tight mb-6">
-                From <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Ideas</span> to 
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary"> Reality</span>
-              </h1>
+            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 leading-tight mb-6">
+              From <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Ideas</span> to 
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary"> Reality</span>
+            </h1>
 
-              <p className="text-xl text-gray-600 mb-8">
-                We bridge the gap between vision and reality through cutting-edge technology. 
-                Creating awesome digital experiences since 2022.
-              </p>
+            <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+              We bridge the gap between vision and reality through cutting-edge technology. 
+              Creating awesome digital experiences since 2022.
+            </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center justify-center space-x-2"
-                >
-                  <span>Start Your Project</span>
-                  <ArrowRight size={20} />
-                </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-primary to-secondary text-white px-10 py-5 rounded-full font-semibold text-lg flex items-center justify-center space-x-3 mx-auto"
+            >
+              <span>Start Your Project</span>
+              <ArrowRight size={22} />
+            </motion.button>
 
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full font-semibold text-lg flex items-center justify-center space-x-2"
-                >
-                  <Play size={20} />
-                  <span>Watch Demo</span>
-                </motion.button>
+            <div className="mt-20 grid grid-cols-2 gap-8 max-w-xl mx-auto">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-secondary">200+</div>
+                <div className="text-gray-600">Projects Delivered</div>
               </div>
-
-              <div className="mt-12 grid grid-cols-3 gap-8">
-                <div>
-                  <div className="text-3xl font-bold text-primary">51-200</div>
-                  <div className="text-gray-600">Team Members</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-secondary">100+</div>
-                  <div className="text-gray-600">Projects Delivered</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-accent">15+</div>
-                  <div className="text-gray-600">Industries Served</div>
-                </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-accent">15+</div>
+                <div className="text-gray-600">Industries Served</div>
               </div>
             </div>
-          </FadeIn>
-
-          <FadeIn direction="left" delay={0.3}>
-            <motion.div
-              animate={{ y: [0, -20, 0] }}
-              transition={{ duration: 6, repeat: Infinity }}
-              className="relative"
-            >
-              <div className="relative bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-full font-semibold">
-                  Live Dashboard
-                </div>
-                
-                {/* Mock App Interface */}
-                <div className="space-y-6">
-                  <div className="flex space-x-4">
-                    <div className="w-1/3 h-32 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl"></div>
-                    <div className="w-2/3 h-32 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl"></div>
-                  </div>
-                  <div className="h-48 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl p-4">
-                    <div className="flex justify-between items-center mb-4">
-                      <div className="text-sm font-semibold text-gray-700">Analytics Overview</div>
-                      <div className="text-xs text-gray-500">Live</div>
-                    </div>
-                    {/* Chart bars */}
-                    <div className="flex items-end h-24 space-x-2">
-                      {[40, 60, 80, 100, 80, 60, 40].map((height, i) => (
-                        <motion.div
-                          key={i}
-                          initial={{ height: 0 }}
-                          animate={{ height: `${height}%` }}
-                          transition={{ delay: i * 0.1, duration: 0.5 }}
-                          className="w-full bg-gradient-to-t from-primary to-accent rounded-t-lg"
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Elements */}
-              <motion.div
-                animate={{ y: [0, -30, 0] }}
-                transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-                className="absolute -top-8 -right-8 bg-white p-4 rounded-2xl shadow-xl border border-gray-200"
-              >
-                <div className="text-sm font-semibold text-primary">📱 Mobile First</div>
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, 30, 0] }}
-                transition={{ duration: 5, repeat: Infinity, delay: 0.5 }}
-                className="absolute -bottom-8 -left-8 bg-white p-4 rounded-2xl shadow-xl border border-gray-200"
-              >
-                <div className="text-sm font-semibold text-secondary">⚡ Fast Delivery</div>
-              </motion.div>
-            </motion.div>
           </FadeIn>
         </div>
       </div>
