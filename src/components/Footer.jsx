@@ -69,7 +69,7 @@ const Footer = () => {
             <a href="https://appsait.com" className="hover:text-primary">appsait.com</a> • 
             <a href="https://play.google.com/store/apps/dev?id=6756875694075191085" target="_blank" rel="noreferrer" className="hover:text-primary ml-2">
               Google Play Portfolio
-            </a>
+            </a>            </a>
           </div>
 
           <motion.button
