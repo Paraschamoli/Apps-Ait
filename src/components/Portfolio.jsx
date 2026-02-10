@@ -16,7 +16,7 @@ const Portfolio = () => {
       tech: ['Flutter', 'AI', 'Firebase'],
       rating: 4.9,
       image: '/healthcare1.jpg',
-    link: 'https://play.google.com/store/apps/details?id=com.appsait.healthcare'
+      link: 'https://play.google.com/store/apps/details?id=com.appsait.healthcare'
     },
     {
       id: 2,
@@ -82,8 +82,7 @@ const Portfolio = () => {
     : portfolioItems.filter(item => item.category === activeFilter);
 
   return (
-     <section className="py-20 bg-white">
-    {/* // <section id="portfolio" className="py-20 bg-white"> */}
+    <section id="portfolio" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Header */}
         <FadeIn>

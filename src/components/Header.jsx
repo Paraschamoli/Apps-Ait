@@ -9,7 +9,6 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
-  const [prevPathname, setPrevPathname] = useState(location.pathname)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,10 +18,11 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  if (location.pathname !== prevPathname) {
-    setPrevPathname(location.pathname)
+  // Close mobile menu on route change
+  useEffect(() => {
     setIsOpen(false)
-  }
+  }, [location.pathname])
+  }, [location.pathname, setIsOpen])
 
   const navItems = [
     { name: 'Home', path: '/' },

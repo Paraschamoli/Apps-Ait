@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Send, Mail, Phone, MapPin, Clock, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import FadeIn from './animations/FadeIn';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from './firebase';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -27,8 +29,15 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      await addDoc(collection(db, "contacts"), {
+        ...formData,
+        createdAt: new Date()
+      });
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      alert("Error sending message. Please try again.");
+    }
     
     setIsSubmitting(false);
     setIsSubmitted(true);

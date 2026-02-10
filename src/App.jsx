@@ -5,7 +5,10 @@ import AboutPage from './pages/AboutPage' // Add this import
 import ServicesPage from './pages/ServicesPage'
 import PortfolioPage from './pages/PortfolioPage'
 import ContactPage from './pages/ContactPage'
+import PrivacyPage from './pages/PrivacyPage' // Add this import
+import TermsPage from './pages/TermsPage' // Add this import
 import NotFoundPage from './pages/NotFoundPage'
+import TestPage from './pages/TestPage'
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
         <Route path="services" element={<ServicesPage />} />
         <Route path="portfolio" element={<PortfolioPage />} />
         <Route path="contact" element={<ContactPage />} />
+        <Route path="privacy" element={<PrivacyPage />} /> {/* Add this route */}
+        <Route path="terms" element={<TermsPage />} /> {/* Add this route */}
+        <Route path="test" element={<TestPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
