@@ -21,7 +21,6 @@ const Header = () => {
   // Close mobile menu on route change
   useEffect(() => {
     setIsOpen(false)
-  }, [location.pathname])
   }, [location.pathname, setIsOpen])
 
   const navItems = [
@@ -35,7 +34,6 @@ const Header = () => {
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${
       scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
-
     }`}>
    
       <div className="container mx-auto px-4 py-4">
