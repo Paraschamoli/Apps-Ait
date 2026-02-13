@@ -18,9 +18,10 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Close mobile menu on route change
   useEffect(() => {
     setIsOpen(false)
-  }, [location])
+  }, [location.pathname, setIsOpen])
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -33,15 +34,12 @@ const Header = () => {
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${
       scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
-
     }`}>
    
       <div className="container mx-auto px-4 py-4">
         <div className="h-20 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="size-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">A</span>
-            </div>
+            <img src="/logo.jpg" alt="Apps AiT Logo" className="size-10 rounded-lg object-contain" />
             <span className="text-2xl font-bold text-gray-900">Apps AiT</span>
           </Link>
 
@@ -58,17 +56,13 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <motion.a
-              href="https://appsait.com/contact-us/"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-primary to-secondary text-white px-6 py-2.5 rounded-full font-semibold flex items-center space-x-2"
+            <Link
+              to="/contact"
+              className="bg-gradient-to-r from-primary to-secondary text-white px-6 py-2.5 rounded-full font-semibold flex items-center space-x-2 transition-transform hover:scale-105 active:scale-95"
             >
               <span>Get Started</span>
               <ChevronRight size={20} />
-            </motion.a>
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -105,14 +99,13 @@ const Header = () => {
                     {item.name}
                   </Link>
                 ))}
-                <a
-                  href="https://appsait.com/contact-us/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/contact"
+                  onClick={() => setIsOpen(false)}
                   className="block w-full bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold text-center"
                 >
                   Book Consultation
-                </a>
+                </Link>
               </div>
             </motion.div>
           )}

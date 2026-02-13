@@ -1,4 +1,4 @@
-import { Code2, Smartphone, Megaphone, CheckCircle, Shield, Users } from 'lucide-react';
+import { Code2, Megaphone, CheckCircle, Shield, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 import FadeIn from './animations/FadeIn';
 
@@ -75,7 +75,7 @@ const Services = () => {
             <motion.div
               key={service.id}
               className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow group h-full flex flex-col"
-              whileHover={-10  }
+              whileHover={{ y: -10 }}
             >
               <FadeIn delay={index * 0.1}>
                 {/* Icon */}
@@ -87,9 +87,7 @@ const Services = () => {
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 min-h-[64px]">{service.title}</h3>
 
                 {/* Description */}
-                
-                
-              <p className="text-gray-600 mb-6 min-h-[72px]">
+                <p className="text-gray-600 mb-6 min-h-[72px]">
                 {service.description}
                </p>
                 {/* Features */}

@@ -1,55 +1,35 @@
-'use client'
+import { motion } from 'framer-motion';
 
-import { motion } from 'framer-motion'
-import { useEffect, useState, useRef } from 'react'
-
-const FadeIn = ({ children, delay = 0, direction = 'up', className = '' }) => {
-  const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.disconnect()
-        }
+const FadeIn = ({ children, direction, delay, className }) => {
+  const variants = {
+    hidden: {
+      opacity: 0,
+      x: direction === 'right' ? -20 : direction === 'left' ? 20 : 0,
+      y: direction === 'up' ? 20 : direction === 'down' ? -20 : 0,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        delay: delay || 0,
+        ease: 'easeOut',
       },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-      }
-    )
-
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current)
-      }
-    }
-  }, [])
-
-  const directionMap = {
-    up: { y: 50 },
-    down: { y: -50 },
-    left: { x: 50 },
-    right: { x: -50 },
-  }
+    },
+  };
 
   return (
     <motion.div
-      ref={ref}
-      initial={{ opacity: 0, ...directionMap[direction] }}
-      animate={isVisible ? { opacity: 1, x: 0, y: 0 } : {}}
-      transition={{ duration: 0.6, delay, ease: 'easeOut' }}
+      variants={variants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.25 }}
       className={className}
     >
       {children}
     </motion.div>
-  )
-}
+  );
+};
 
-export default FadeIn
+export default FadeIn;
